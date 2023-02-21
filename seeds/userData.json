@@ -1,17 +1,17 @@
 [
   {
-    "name": "Nelson",
+    "user_name:": "Nelson",
     "email": "nelson8223@gmail.com",
-    "password": "online1989"
+    "password": "online123"
   },
   {
-    "name": "Kelly",
+    "user_name:": "Kelly",
     "email": "HotKelly@hotmail.com",
-    "password": "kelly12345"
+    "password": "online123"
   },
   {
-    "name": "Mike",
+    "user_name:": "Mike",
     "email": "GoodmanMike@gmail.com",
-    "password": "pass1945"
+    "password": "online123"
   }
 ]
