@@ -1,16 +1,16 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
    console.log("hello world") 
-    const newProject = await Project.create({
+    const newBlog = await Blog.create({
       ...req.body,
       user_name: req.session.user_name,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -18,19 +18,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const blogData = await Blog.destroy({
       where: {
         user_name: req.params.user_name,
         user_name: req.session.user_name,
       },
     });
 
-    if (!projectData) {
+    if (!blogData) {
       res.status(404).json({ message: 'unable to add Blog!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(blogData);
   } catch (err) {
     res.status(500).json(err);
   }
